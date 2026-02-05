@@ -1,0 +1,38 @@
+.stockfish-highlight {
+  position: absolute;
+  box-sizing: border-box;
+  pointer-events: none;
+  border: 3px solid rgba(0, 0, 0, 0.6);
+  border-radius: 6px;
+  z-index: 9999;
+}
+
+.stockfish-highlight-from {
+  background: rgba(74, 144, 226, 0.35);
+  border-color: rgba(74, 144, 226, 0.85);
+}
+
+.stockfish-highlight-to {
+  background: rgba(245, 166, 35, 0.35);
+  border-color: rgba(245, 166, 35, 0.85);
+}
+
+.stockfish-notice {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  padding: 10px 14px;
+  background: rgba(20, 20, 20, 0.9);
+  color: #fff;
+  border-radius: 6px;
+  font-size: 14px;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10000;
+}
+
+.stockfish-notice.visible {
+  opacity: 1;
+  transform: translateY(0);
+}

@@ -1,0 +1,38 @@
+{
+  "manifest_version": 3,
+  "name": "Chess Assistant (Stockfish Cloud)",
+  "version": "0.1.0",
+  "description": "Shows top Stockfish moves with keyboard shortcuts.",
+  "permissions": ["activeTab", "tabs"],
+  "host_permissions": ["https://lichess.org/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "commands": {
+    "show-best-move": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+1"
+      },
+      "description": "Show best move"
+    },
+    "show-second-move": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+2"
+      },
+      "description": "Show second best move"
+    },
+    "show-third-move": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+3"
+      },
+      "description": "Show third best move"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"]
+    }
+  ]
+}
